@@ -1,0 +1,108 @@
+/* ============================================================
+   Skillora - dark theme (wine / pink / cream)
+   All colour decisions live here. styles.css only uses these.
+   ============================================================ */
+:root {
+  color-scheme: dark;
+
+  --bg: #0B0B0F;
+  --surface: #15131A;
+  --surface-2: #1C1922;
+  --card: rgba(48, 15, 30, .62);
+  --card-border: rgba(255, 45, 155, .16);
+  --border: rgba(255, 255, 255, .09);
+  --border-strong: rgba(255, 255, 255, .21);
+  --hover: rgba(255, 255, 255, .055);
+  --glass: rgba(255, 255, 255, .045);
+
+  --text: #F8F6F4;
+  --muted: #BBAFBB;
+
+  --primary: #FF2D9B;
+  --primary-hover: #FF59B1;
+  --on-primary: #21030F;
+  --primary-soft: rgba(255, 45, 155, .14);
+  --primary-text: #FF8FCB;
+  --primary-border-soft: rgba(255, 45, 155, .36);
+
+  --secondary: #8B5CF6;
+  --secondary-hover: #A78BFA;
+  --secondary-soft: rgba(139, 92, 246, .16);
+  --secondary-text: #C9B8FF;
+  --secondary-border: rgba(139, 92, 246, .34);
+
+  --evergreen-soft: rgba(52, 211, 153, .13);
+  --evergreen-text: #6EE7B7;
+  --evergreen-border: rgba(52, 211, 153, .32);
+
+  --best-soft: rgba(251, 191, 36, .14);
+  --best-text: #FCD34D;
+  --best-border: rgba(251, 191, 36, .34);
+
+  --warning-soft: rgba(245, 158, 11, .13);
+  --warning-text: #FCD34D;
+  --warning-border: rgba(245, 158, 11, .32);
+
+  --danger: #FB7185;
+  --danger-soft: rgba(251, 113, 133, .12);
+  --danger-border: rgba(251, 113, 133, .34);
+
+  --focus: #FF8FCB;
+  --focus-shadow: 0 0 0 3px rgba(255, 45, 155, .22);
+  --glow: 0 10px 32px -12px rgba(255, 45, 155, .62);
+  --glow-strong: 0 16px 46px -12px rgba(255, 45, 155, .72);
+  --shadow: 0 14px 34px -24px rgba(0, 0, 0, .9);
+  --shadow-lg: 0 30px 72px -30px rgba(0, 0, 0, .95);
+
+  --sidebar: #120A11;
+  --sidebar-border: rgba(255, 45, 155, .13);
+  --sidebar-text: #F3EAF0;
+  --sidebar-hover: rgba(255, 255, 255, .055);
+  --sidebar-card: rgba(255, 255, 255, .045);
+  --topbar: rgba(11, 11, 15, .82);
+
+  --input-bg: rgba(8, 8, 13, .62);
+  --ring-track: rgba(255, 255, 255, .09);
+  --avatar-bg: rgba(255, 45, 155, .22);
+  --avatar-text: #FFD1E6;
+  --lock-bg: rgba(11, 11, 15, .74);
+  --toast-bg: #200D17;
+  --toast-text: #F8F6F4;
+  --toast-border: rgba(255, 45, 155, .32);
+
+  --quote-bg: linear-gradient(120deg, #4A0E24 0%, #6E1238 52%, #350A1B 100%);
+  --quote-border: rgba(255, 45, 155, .28);
+
+  --home-bg: radial-gradient(120% 90% at 50% 0%, #230915 0%, #110910 52%, #0B0B0F 100%);
+  --home-glow1: rgba(255, 45, 155, .34);
+  --home-glow2: rgba(139, 92, 246, .28);
+  --home-glow3: rgba(74, 14, 36, .85);
+  --dot: rgba(255, 255, 255, .17);
+
+  --plan-starter: #22D3EE;
+  --plan-starter-soft: rgba(34, 211, 238, .12);
+  --plan-starter-border: rgba(34, 211, 238, .32);
+  --plan-standard: #FF2D9B;
+  --plan-standard-soft: rgba(255, 45, 155, .12);
+  --plan-standard-border: rgba(255, 45, 155, .32);
+  --plan-enterprise: #A78BFA;
+  --plan-enterprise-soft: rgba(167, 139, 250, .13);
+  --plan-enterprise-border: rgba(167, 139, 250, .34);
+
+  --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%23BBAFBB' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* display choices for dark: pink line chart, pink waves, no mountains */
+.chart-line { display: block; }
+.chart-bars { display: none; }
+.home-waves { display: block; }
+.home-mountains { display: none; }
+.decor-wave { display: block; }
+.decor-mountain { display: none; }
+
+::selection { background: #FF2D9B; color: #21030F; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #0B0B0F; }
+::-webkit-scrollbar-thumb { background: #33202C; border-radius: 999px; border: 2px solid #0B0B0F; }
+::-webkit-scrollbar-thumb:hover { background: #4A2C3B; }

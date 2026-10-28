@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" data-default-theme="dark" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0B0B0F">
+  <meta name="description" content="Skillora - where businesses post real challenges and students prove their skills. Interactive prototype.">
+  <title>Skillora - Let Your Skills Speak.</title>
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      var fallback = document.documentElement.getAttribute("data-default-theme") === "light" ? "light" : "dark";
+      var params = new URLSearchParams(location.search);
+      var query = params.get("theme");
+      var demo = params.get("demo");
+      if (demo === "client" || demo === "student") {
+        try { localStorage.setItem("skillora_session", demo); } catch (e) { /* ignore */ }
+      }
+      var saved = null;
+      try { saved = localStorage.getItem("skillora_theme"); } catch (e) { /* ignore */ }
+      var theme = (query === "light" || query === "dark") ? query
+        : (saved === "light" || saved === "dark") ? saved : fallback;
+      document.documentElement.setAttribute("data-theme", theme);
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.id = "theme-css";
+      link.href = "theme-" + theme + ".css";
+      document.head.appendChild(link);
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute("content", theme === "light" ? "#F5F8F8" : "#0B0B0F");
+    })();
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+  <div id="modal-root"></div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

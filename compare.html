@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skillora - Theme comparison</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #0b0b0f;
+      color: #f7efe9;
+    }
+    .compare-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      min-height: 64px;
+      padding: 10px 18px;
+      border-bottom: 1px solid #2a2530;
+      background: #111014;
+    }
+    .compare-brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+    .compare-brand span {
+      width: 26px;
+      height: 26px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, #e35d8a, #7c3aed);
+      box-shadow: 0 0 18px rgba(227, 93, 138, 0.45);
+    }
+    .compare-top p {
+      margin: 0;
+      color: #a99ca6;
+      font-size: 12.5px;
+      flex: 1;
+      min-width: 220px;
+    }
+    .compare-controls { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+    .compare-controls label { font-size: 12px; color: #a99ca6; }
+    select {
+      appearance: none;
+      background: #1b1820;
+      color: #f7efe9;
+      border: 1px solid #3a3340;
+      border-radius: 10px;
+      padding: 8px 30px 8px 10px;
+      font: inherit;
+      font-size: 12.5px;
+      cursor: pointer;
+      background-image: linear-gradient(45deg, transparent 50%, #f7efe9 50%), linear-gradient(135deg, #f7efe9 50%, transparent 50%);
+      background-position: calc(100% - 14px) 52%, calc(100% - 9px) 52%;
+      background-size: 5px 5px, 5px 5px;
+      background-repeat: no-repeat;
+    }
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      height: calc(100vh - 64px);
+      background: #2a2530;
+    }
+    .pane {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 0;
+      background: #111014;
+    }
+    .pane-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 38px;
+      padding: 0 12px;
+      background: #17151b;
+      border-bottom: 1px solid #26212c;
+      font-size: 12px;
+      color: #cfc4ca;
+    }
+    .pane-head b { color: #f7efe9; font-size: 12.5px; }
+    .pane-head .dot { width: 8px; height: 8px; border-radius: 50%; }
+    .pane-head .dot.dark { background: #e35d8a; }
+    .pane-head .dot.light { background: #27b39b; }
+    .pane-head a {
+      margin-left: auto;
+      color: #f3a4be;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 11.5px;
+      padding: 5px 8px;
+      border-radius: 7px;
+    }
+    .pane-head a:hover { background: #2a2530; }
+    iframe { flex: 1; width: 100%; border: 0; background: #0b0b0f; }
+    @media (max-width: 860px) {
+      .compare-grid { grid-template-columns: 1fr; height: auto; }
+      .pane { height: 82vh; }
+      .compare-top { align-items: flex-start; }
+      .compare-controls { margin-left: 0; width: 100%; }
+      select { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="compare-top">
+    <div class="compare-brand"><span></span> Skillora</div>
+    <p>One page, both themes. Use the <b>Dark / Light</b> switch inside either preview to choose a mode.</p>
+    <div class="compare-controls">
+      <label for="route">Screen</label>
+      <select id="route" aria-label="Preview screen">
+        <option value="#/client/dashboard" selected>Client dashboard</option>
+        <option value="#/student/dashboard">Student dashboard</option>
+        <option value="#/client/challenges">Challenges</option>
+        <option value="#/client/messages">Messages</option>
+        <option value="#/client/settings">Settings</option>
+        <option value="#/home">Landing page</option>
+        <option value="#/login/client">Client login</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="compare-grid">
+    <section class="pane">
+      <div class="pane-head">
+        <span class="dot dark"></span><b>Dark</b>
+        <a id="open-dark" href="skillora-dark/index.html?theme=dark&demo=client#/client/dashboard" target="_blank" rel="noopener">Open full screen</a>
+      </div>
+      <iframe id="frame-dark" title="Skillora dark theme" src="skillora-dark/index.html?theme=dark&demo=client#/client/dashboard"></iframe>
+    </section>
+    <section class="pane">
+      <div class="pane-head">
+        <span class="dot light"></span><b>Light</b>
+        <a id="open-light" href="skillora-light/index.html?theme=light&demo=client#/client/dashboard" target="_blank" rel="noopener">Open full screen</a>
+      </div>
+      <iframe id="frame-light" title="Skillora light theme" src="skillora-light/index.html?theme=light&demo=client#/client/dashboard"></iframe>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var darkBase = "skillora-dark/index.html?theme=dark&demo=client";
+      var lightBase = "skillora-light/index.html?theme=light&demo=client";
+      var select = document.getElementById("route");
+      var dark = document.getElementById("frame-dark");
+      var light = document.getElementById("frame-light");
+      var openDark = document.getElementById("open-dark");
+      var openLight = document.getElementById("open-light");
+
+      function apply(route, bustCache) {
+        var suffix = bustCache ? "&r=" + Date.now() : "";
+        dark.src = darkBase + suffix + route;
+        light.src = lightBase + suffix + route;
+        openDark.href = darkBase + route;
+        openLight.href = lightBase + route;
+      }
+
+      select.addEventListener("change", function () { apply(select.value, true); });
+      apply(select.value, false);
+    })();
+  </script>
+</body>
+</html>

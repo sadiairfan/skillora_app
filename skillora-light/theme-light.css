@@ -1,0 +1,120 @@
+/* ============================================================
+   Skillora - light theme (deep teal / mint / navy / blue)
+   Same layout and logic as the dark build.
+   ============================================================ */
+:root {
+  color-scheme: light;
+
+  --bg: #F5F8F8;
+  --surface: #FFFFFF;
+  --surface-2: #EEF4F3;
+  --card: #FFFFFF;
+  --card-border: #E1E9E8;
+  --border: #E1E9E8;
+  --border-strong: #C4D4D2;
+  --hover: #EFF5F4;
+  --glass: rgba(255, 255, 255, .72);
+
+  --text: #0F172A;
+  --muted: #526569;
+
+  --primary: #0F7666;
+  --primary-hover: #0B5D51;
+  --on-primary: #FFFFFF;
+  --primary-soft: #E4F3F0;
+  --primary-text: #0B6A5A;
+  --primary-border-soft: #AFDCD4;
+
+  --secondary: #2563EB;
+  --secondary-hover: #1D4ED8;
+  --secondary-soft: #E8EFFD;
+  --secondary-text: #1D4ED8;
+  --secondary-border: #BBD0F8;
+
+  --evergreen-soft: #E7F6EC;
+  --evergreen-text: #15803D;
+  --evergreen-border: #B4E1C1;
+
+  --best-soft: #FEF3D7;
+  --best-text: #92400E;
+  --best-border: #EFCF88;
+
+  --warning-soft: #FEF3D7;
+  --warning-text: #92400E;
+  --warning-border: #EFCF88;
+
+  --danger: #B91C1C;
+  --danger-soft: #FEE7E7;
+  --danger-border: #F2B6B6;
+
+  --focus: #0F7666;
+  --focus-shadow: 0 0 0 3px rgba(15, 118, 102, .18);
+  --glow: 0 10px 26px -16px rgba(15, 118, 102, .5);
+  --glow-strong: 0 16px 38px -16px rgba(15, 118, 102, .55);
+  --shadow: 0 10px 26px -22px rgba(15, 23, 42, .32);
+  --shadow-lg: 0 26px 62px -34px rgba(15, 23, 42, .35);
+
+  --sidebar: #0F172A;
+  --sidebar-border: rgba(255, 255, 255, .1);
+  --sidebar-text: #E8F0F1;
+  --sidebar-hover: rgba(255, 255, 255, .07);
+  --sidebar-card: rgba(255, 255, 255, .06);
+  --topbar: rgba(255, 255, 255, .88);
+
+  --input-bg: #F8FAFA;
+  --ring-track: #E2EAE9;
+  --avatar-bg: #D7F0EA;
+  --avatar-text: #0A5E50;
+  --lock-bg: rgba(255, 255, 255, .76);
+  --toast-bg: #0F172A;
+  --toast-text: #F8FAFC;
+  --toast-border: #1E293B;
+
+  --quote-bg: linear-gradient(120deg, #E3F4F0 0%, #D5EFE9 52%, #C7E9E2 100%);
+  --quote-border: #B2DDD5;
+
+  --home-bg: radial-gradient(120% 90% at 50% 0%, #FFFFFF 0%, #F0F8F6 50%, #E8F4F1 100%);
+  --home-glow1: rgba(20, 184, 166, .22);
+  --home-glow2: rgba(59, 130, 246, .16);
+  --home-glow3: rgba(167, 243, 208, .55);
+  --dot: rgba(15, 23, 42, .14);
+
+  --plan-starter: #0E7490;
+  --plan-starter-soft: #E2F2F7;
+  --plan-starter-border: #A9D9E5;
+  --plan-standard: #1D4ED8;
+  --plan-standard-soft: #E8EFFD;
+  --plan-standard-border: #B9CDF7;
+  --plan-enterprise: #6D28D9;
+  --plan-enterprise-soft: #F1EAFD;
+  --plan-enterprise-border: #D3C3F4;
+
+  --select-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%23526569' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* display choices for light: teal bar chart, mountain scenery */
+.chart-line { display: none; }
+.chart-bars { display: flex; }
+.home-waves { display: none; }
+.home-mountains { display: block; }
+.decor-wave { display: none; }
+.decor-mountain { display: block; }
+
+/* sidebar lives on navy in the light build */
+.sidebar .plan-pill { background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .18); color: #E6FFFB; }
+.sidebar .plan-pill.accent-starter { color: #A5F3FC; border-color: rgba(165, 243, 252, .38); }
+.sidebar .plan-pill.accent-standard { color: #99F6E4; border-color: rgba(153, 246, 228, .38); }
+.sidebar .plan-pill.accent-enterprise { color: #DDD6FE; border-color: rgba(221, 214, 254, .38); }
+.sidebar .nav-item.active { box-shadow: 0 10px 26px -14px rgba(20, 184, 166, .65); }
+.sidebar .nav-badge { background: #14B8A6; color: #052E2A; }
+.sidebar .nav-item.active .nav-badge { background: #FFFFFF; color: #0F7666; }
+.topbar { box-shadow: 0 8px 24px -26px rgba(15, 23, 42, .55); }
+.login-card { box-shadow: 0 26px 62px -38px rgba(15, 23, 42, .38); }
+.textarea { background: var(--input-bg); }
+
+::selection { background: #0F7666; color: #FFFFFF; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #EDF3F2; }
+::-webkit-scrollbar-thumb { background: #C4D4D2; border-radius: 999px; border: 2px solid #EDF3F2; }
+::-webkit-scrollbar-thumb:hover { background: #A7BCBA; }
